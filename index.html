@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigeta's Car Concept - Estética Automotiva & Pintura Profissional</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0A0F0D;
+            --bg-card: #121A16;
+            --bg-card-hover: #1A2620;
+            --accent-green: #00FF66;
+            --emerald-green: #00B34A;
+            --dark-green: #052916;
+            --text-light: #F0F4F1;
+            --text-muted: #9AA8A0;
+            --border-color: rgba(0, 255, 102, 0.15);
+            --glow: 0 0 20px rgba(0, 255, 102, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, .brand-font {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 15, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .btn-header {
+            background: linear-gradient(135deg, var(--emerald-green), var(--accent-green));
+            color: #000 !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 800 !important;
+            box-shadow: var(--glow);
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 5% 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 255, 102, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(0, 179, 74, 0.05) 0%, transparent 40%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero-title .highlight {
+            color: var(--accent-green);
+            text-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emerald-green), var(--accent-green));
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--glow);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(0, 255, 102, 0.7);
+        }
+
+        /* Photo Box */
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), var(--glow);
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(10, 15, 13, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .image-overlay-badge i {
+            color: var(--accent-green);
+            font-size: 1.8rem;
+        }
+
+        .image-overlay-badge p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .image-overlay-badge strong {
+            color: #fff;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 5%;
+            background: #080C0A;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-subtitle {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: var(--bg-card-hover);
+            border-color: rgba(0, 255, 102, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(0, 255, 102, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent-green);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-list li i {
+            color: var(--accent-green);
+            font-size: 0.8rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 5%;
+            background: var(--bg-dark);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--dark-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-weight: 800;
+            border: 1px solid var(--accent-green);
+        }
+
+        .client-details h4 {
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .client-details span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #050806;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-green);
+            color: #000;
+            box-shadow: var(--glow);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-image-card img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                padding-top: 120px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="#" class="logo brand-font">
+            <i class="fa-solid fa-spray-can-sparkles" style="color: var(--accent-green);"></i>
+            Vigeta's <span>Car Concept</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#depoimentos">Avaliações</a></li>
+            <li><a href="https://wa.me/5511995191087?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20pintura%20automotiva." target="_blank" class="btn-header">Falar no WhatsApp</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i> Estética & Pintura de Alta Performance
+                </div>
+                <h1 class="hero-title">Vigeta's Car Concept <br><span class="highlight">Pintura Automotiva</span></h1>
+                <p class="hero-description">
+                    Devolva o brilho original e a elegância impecável ao seu veículo. Trabalhamos com tintas premium, estufa de alta precisão e acabamento impecável com padrões internacionais de qualidade.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="https://wa.me/5511995191087?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20pintura%20automotiva." class="btn-primary" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Agendar Meu Orçamento
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-image-card">
+                    <img src="teste.jpeg" alt="Profissional aplicando pintura automotiva de alta precisão">
+                    <div class="image-overlay-badge">
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <strong>Acabamento Profissional Espelhado</strong>
+                            <p>Técnicos especializados e insumos de altíssima qualidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="section-header">
+            <span class="section-subtitle">Nossas Especialidades</span>
+            <h2 class="section-title">Soluções Completas em Pintura</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                <h3>Pintura Geral & Restauração</h3>
+                <p>Renovação total da pintura do seu veículo com acerto de cor computadorizado e estufa climatizada.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Cores originais de fábrica</li>
+                    <li><i class="fa-solid fa-check"></i> Remoção total de imperfeições</li>
+                    <li><i class="fa-solid fa-check"></i> Garantia de durabilidade</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3>Micropintura & Retoques</h3>
+                <p>Eliminação de arranhões, riscos e pequenos amassados mantendo a originalidade do restante do carro.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Correção cirúrgica de danos</li>
+                    <li><i class="fa-solid fa-check"></i> Sem diferença de tonalidade</li>
+                    <li><i class="fa-solid fa-check"></i> Serviço rápido e eficiente</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3>Vitrificação & Verniz Especial</h3>
+                <p>Aplicação de vernizes de alta resistência UV e proteção cerâmica de longo prazo para brilho intenso.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Proteção contra raios solares</li>
+                    <li><i class="fa-solid fa-check"></i> Efeito hidrofóbico repelente</li>
+                    <li><i class="fa-solid fa-check"></i> Aspecto molhado e espelhado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="depoimentos">
+        <div class="section-header">
+            <span class="section-subtitle">O Que Dizem Nossos Clientes</span>
+            <h2 class="section-title">Satisfação Garantida</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Pintei o capô do meu carro que estava queimado de sol. O resultado da Vigeta's Car Concept ficou simplesmente idêntico ao resto da lataria. Atendimento impecável!"</p>
+                <div class="client-info">
+                    <div class="client-avatar">RC</div>
+                    <div class="client-details">
+                        <h4>Rodrigo Costa</h4>
+                        <span>Proprietário de Honda Civic</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Trabalho extremamente minucioso e atencioso. Deixaram meu carro novo de novo. O tom do verde e a estrutura da oficina passam total confiança."</p>
+                <div class="client-info">
+                    <div class="client-avatar">MA</div>
+                    <div class="client-details">
+                        <h4>Marcio Almeida</h4>
+                        <span>Proprietário de BMW 320i</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Excelente equipe! Fiz retoque no pára-choque e polimento técnico. O acabamento espelhado superarou as minhas expectativas."</p>
+                <div class="client-info">
+                    <div class="client-avatar">FS</div>
+                    <div class="client-details">
+                        <h4>Fernanda Silva</h4>
+                        <span>Proprietária de Jeep Compass</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo brand-font" style="margin-bottom: 20px;">
+                    Vigeta's <span>Car Concept</span>
+                </a>
+                <p>Especialistas em pintura automotiva e estética de alta precisão. Seu veículo com o brilho e a proteção que ele merece.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/vigeta.pintor.automotivo/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/vigetaconceptcar/" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/5511995191087?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20pintura%20automotiva." class="social-icon" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nossos Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicos">Pintura Geral</a></li>
+                    <li><a href="#servicos">Micropintura & Retoques</a></li>
+                    <li><a href="#servicos">Vitrificação e Proteção UV</a></li>
+                    <li><a href="#servicos">Polimento Técnico Espelhado</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Atendimento</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--accent-green); margin-right: 8px;"></i> Atendendo na sua Região</p>
+                <p><i class="fa-solid fa-clock" style="color: var(--accent-green); margin-right: 8px;"></i> Seg - Sex: 08:00 às 18:00</p>
+                <p><i class="fa-solid fa-phone" style="color: var(--accent-green); margin-right: 8px;"></i> (11) 99519-1087</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vigeta's Car Concept - Estética Automotiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511995191087?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20pintura%20automotiva." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
